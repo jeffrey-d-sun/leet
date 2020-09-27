@@ -12,6 +12,5 @@ const twoSum = (nums, target) => {
       break;
     }
   }
-
   return res
 };
