@@ -1,4 +1,6 @@
 const twoSum = (nums, target) => {
+  // two-pass hash table solution
+  /*
   const hashMap = nums.reduce((acc, num, index) => {
     acc[num] = index
     return acc
@@ -13,4 +15,18 @@ const twoSum = (nums, target) => {
     }
   }
   return res
+  */
+
+  // one-pass hash table solution
+  const hash = {}
+  const result = []
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i]
+    if (hash.hasOwnProperty([target - num])) {
+      result.push(hash[num], i)
+      break;
+    }
+    hash[num] = i
+  }
+  return result
 };
