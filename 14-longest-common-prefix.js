@@ -2,7 +2,7 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
+const longestCommonPrefix = (strs) => {
   if (!strs.length) return ''
   strs.sort((a, b) => a.length - b.length)
   const shortestWord = strs.shift()
