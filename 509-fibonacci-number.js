@@ -1,4 +1,12 @@
 const solution = N => {
+  /*
+  recursive solution
+
+  if (N === 0 || N === 1) return N
+  return solution(N -1) + solution(N - 2)
+  */
+
+  // resursive with memoization
   const cache = [0, 1]
   const memoize = num => {
     if (cache[num] !== undefined) return cache[num]
