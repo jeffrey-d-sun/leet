@@ -5,6 +5,9 @@
 
 // O(n) time
 // O(1) space
+/*
+  this is a dynamic programming problem solved with memoization of previous sub-problem's solution
+*/
 
 const climbStairs = (n) => {
   if (n === 1 || n === 0) return 1
