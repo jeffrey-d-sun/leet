@@ -1,23 +1,28 @@
 /**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
  */
-const isAnagram = (s, t) => {
-  if (s.length !== t.length) return false
-  const hash = {}
-  for(let c in s) {
-    hash[s[c]] = (hash[s[c]] || 0) + 1
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+const reverseList = head => {
+  if (head === null || head.next === null) {
+    return head
   }
   
-  for(let c in t) {
-    if (hash[t[c]] === undefined) {
-      return false
-    }
-    if (hash[t[c]] > 0) {
-      hash[t[c]] -= 1
-    }
+  let prev = null
+  let next = null
+  
+  while(head !== null) {
+    next = head.next
+    head.next = prev
+    prev = head
+    head = next
   }
   
-  return Object.values(hash).every(count => count === 0)
+  return prev
 };
