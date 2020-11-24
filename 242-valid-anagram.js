@@ -6,16 +6,16 @@
 const isAnagram = (s, t) => {
   if (s.length !== t.length) return false
   const hash = {}
-  for(let c in s) {
-    hash[s[c]] = (hash[s[c]] || 0) + 1
+  for(let c of s) {
+    hash[c] = (hash[c] || 0) + 1
   }
   
-  for(let c in t) {
-    if (hash[t[c]] === undefined) {
+  for(let c of t) {
+    if (hash[c] === undefined) {
       return false
     }
-    if (hash[t[c]] > 0) {
-      hash[t[c]] -= 1
+    if (hash[c] > 0) {
+      hash[c] -= 1
     }
   }
   
